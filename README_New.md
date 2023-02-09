@@ -1,1 +1,0 @@
-# Qizz-Application

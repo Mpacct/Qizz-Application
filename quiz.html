@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="./Assets/css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <title>Document</title>
+    <title>Questions</title>
 </head>
 <body>
     <header>
         <ul>
-            <li><a href="./index2.html">View Highscores</a></li>
+            <li><a href="./highscores.html">View Highscores</a></li>
             <li id="count">Time: 75</li>
         </ul>
     </header>
     <div class="quizContent">
-        <h1 id="mainHeader">Coding Quiz Challenge</h1>
-        <p id="introParagraph">This is the paragraph explaining our coding challenge</p>
-        <ol id="quizList">
-            <li class="list-group-item"><a href="./index3.html"><button type="button" class="btn btn-primary">Start Quiz</button></a></li>
+        <h1 id="questions"></h1>
+        <ol id="question1">
+            <li class="list-group-item"><button type="button" class="btn btn-primary" id ="choice1" value="1"></button></li>
+            <li class="list-group-item"><button type="button" class="btn btn-primary"id ="choice2" value="2"></button></li>
+            <li class="list-group-item"><button type="button" class="btn btn-primary"id ="choice3" value="3"></button></li>
+            <li class="list-group-item"><button type="button" class="btn btn-primary"id ="choice4" value="4"></button></li>
         </ol>
     </div>
 </body>

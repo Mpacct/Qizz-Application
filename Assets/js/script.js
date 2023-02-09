@@ -10,12 +10,12 @@ let userans
 let qNum = 0
 var timeInterval
 let highScoresArray = []
-let highScores = JSON.parse(localStorage.getItem('highScoreArray'));
+let highScore = JSON.parse(localStorage.getItem('highScoresArray'));
 let questions = [
     {
     question: "Which of the following is a correct way to create an object in java script?",
     choices: ["var name = {}", "name = {}", "{name} = {}", "object name = {}"],
-    answer: 2
+    answer: 1
     },
 
     {
@@ -25,20 +25,20 @@ let questions = [
     },
 
     {
-     question: "abcde?",
-     choices: ["A", "B", "C", "D"],
+     question: "What does the term 'API' stand for?",
+     choices: ["Application Performance Integration", "Apreciation Prose Interjection", "Application Problem Interface", "Application Programming Interface"],
      answer: 4
     },
 
     {
-    question: "aaaaaa?",
-    choices: ["Aa", "Bb", "Cc", "Dd"],
+    question: "Which of the following is a correct way to name a function?",
+    choices: ["displayObject() {};", "function displayObject() {};", "function displayObject", "function() = displayObject"],
     answer: 2
     },
 
     {
-    question: "ccccccc?",
-    choices: ["aaA", "bbbB", "C", "D"],
+    question: "What would you save information to to be able to let the user access it upon refreshing their web browser?",
+    choices: ["Local Storage", "Application Storage", "Read-Items", "Set Storage"],
     answer: 1
     }
 
@@ -50,61 +50,8 @@ function displayQuestionOne () {
     quizChoice2.innerHTML = questions[qNum].choices[1]
     quizChoice3.innerHTML = questions[qNum].choices[2]
     quizChoice4.innerHTML = questions[qNum].choices[3]
-    // displayQuestionTwo();
 };
 
-// function displayQuestionTwo() {
-//     question1.addEventListener("click", function() {
-//         checkAns(questions[0].answer)
-//         quizQuestion.innerHTML = questions[1].question
-//         quizChoice1.innerHTML = questions[1].choices[0]
-//         quizChoice2.innerHTML = questions[1].choices[1]
-//         quizChoice3.innerHTML = questions[1].choices[2]
-//         quizChoice4.innerHTML = questions[1].choices[3]
-//         question1.setAttribute("id", "question2")
-//         displayQuestionThree();
-//     });
-// };
-
-// function displayQuestionThree () {
-//     let question2 = document.querySelector("#question2");
-//     question2.addEventListener("click", function() {
-//         checkAns(questions[1].answer)
-//         quizQuestion.innerHTML = questions[2].question
-//         quizChoice1.innerHTML = questions[2].choices[0]
-//         quizChoice2.innerHTML = questions[2].choices[1]
-//         quizChoice3.innerHTML = questions[2].choices[2]
-//         quizChoice4.innerHTML = questions[2].choices[3]
-//         question2.setAttribute("id", "question3")
-//         displayQuestionFour();
-//     });
-// };
-
-// function displayQuestionFour () {
-//     let question3 = document.querySelector("#question3");
-//     question3.addEventListener("click", function() {
-//         console.log(userans)
-//         quizQuestion.innerHTML = questions[3].question
-//         quizChoice1.innerHTML = questions[3].choices[0]
-//         quizChoice2.innerHTML = questions[3].choices[1]
-//         quizChoice3.innerHTML = questions[3].choices[2]
-//         quizChoice4.innerHTML = questions[3].choices[3]
-//         question3.setAttribute("id", "question4")
-//         displayQuestionFive ();
-//     });
-// };
-
-// function displayQuestionFive () {
-//     let question4 = document.querySelector("#question4")
-//     question4.addEventListener("click", function() {
-//         console.log(userans)
-//         quizQuestion.innerHTML = questions[4].question
-//         quizChoice1.innerHTML = questions[4].choices[0]
-//         quizChoice2.innerHTML = questions[4].choices[1]
-//         quizChoice3.innerHTML = questions[4].choices[2]
-//         quizChoice4.innerHTML = questions[4].choices[3]
-//     });
-// };
 
 function countdown () {
     var timeInterval = setInterval(function () {
@@ -184,14 +131,14 @@ function endQuiz() {
         initials: initials,
         score: finalScore
     }
-    if(highscore === null) {
-        highscoreArr = highScoresArr.concat(results);
-        localStorage.setItem('highScoresArr', JSON.stringify(highScoresArr));
+    if(highScore === null) {
+        highScoresArray = highScoresArray.concat(results);
+        localStorage.setItem('highScoresArray', JSON.stringify(highScoresArray));
     } else {
-        highscoreArr = highScore;
-        highscoreArr = highScoresArr.concat(results);
-        localStorage.setItem('highScoresArr', JSON.stringify(highScoresArr));
+        highScoresArray = highScore;
+        highScoresArray = highScoresArray.concat(results);
+        localStorage.setItem('highScoresArray', JSON.stringify(highScoresArray));
     };
-    location.href = "./index2.html"
+    location.href = "./highscores.html"
 
 }
