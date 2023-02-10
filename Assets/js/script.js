@@ -66,7 +66,9 @@ function countdown () {
             clearInterval(timeInterval);
             timeLeft = 0
             timer.innerHTML = "Time: 0"
-            endQuiz();
+            if(qNum != 5) {
+                endQuiz();
+            }
         }
     },1000);
 }
@@ -125,6 +127,9 @@ quizChoice4.addEventListener("click", function(){
 
 // endQuiz function that stores their finalScore as the remaining time left and has the user enter their initials and save it to local storage.  Takes the user to the highscore page upon entering initials
 function endQuiz() {
+    if (timeLeft < 0) {
+        timeLeft = 0
+    };
     let finalScore = timeLeft
     let initials = prompt(`Your score was ${timeLeft}! Please enter your initials`)
     let results = {
